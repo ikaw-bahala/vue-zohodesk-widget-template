@@ -2,13 +2,14 @@
   "name": "vue-zohodesk-widget-template",
   "version": "0.0.0",
   "scripts": {
+    "start": "vite build && node server/index.js",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 4173",
+    "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "vue": "^3.2.38",
     "babel-loader": "7.1.4",
     "babel-preset-env": "1.6.1",
     "babel-preset-react": "6.24.1",
@@ -25,6 +26,8 @@
     "serve-index": "^1.9.1",
     "style-loader": "0.20.3",
     "url-loader": "1.0.1",
+    "vue": "^3.2.38",
+    "vue-loader": "^17.0.0",
     "webpack": "^4.43.0",
     "webpack-cli": "2.0.13",
     "webpack-dev-middleware": "3.1.2",

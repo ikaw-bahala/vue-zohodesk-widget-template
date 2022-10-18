@@ -1,10 +1,14 @@
+// eslint-disable-next-line no-undef
 let path = require('path');
+const {VueLoaderPlugin} = require("vue-loader");
 
+// eslint-disable-next-line no-undef
 let projectRootDir = process.cwd();
 let sourceFolder = 'src';
 let outputFolder = 'app';
 let outputFileName = 'extension.js';
 
+// eslint-disable-next-line no-undef
 module.exports = (mode = 'production') => ({
   entry: path.join(projectRootDir, sourceFolder, 'index.js'),
   output: {
@@ -21,12 +25,18 @@ module.exports = (mode = 'production') => ({
         loader: 'babel-loader',
         options: {
           presets: [
+            // eslint-disable-next-line no-undef
             [require.resolve('babel-preset-env'), { modules: false }],
+            // eslint-disable-next-line no-undef
             require.resolve('babel-preset-react')
           ],
           cacheDirectory: true
         },
         include: path.join(projectRootDir, sourceFolder)
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       },
       {
         test: /\.css$/,
@@ -45,5 +55,9 @@ module.exports = (mode = 'production') => ({
         use: ['url-loader?limit=1&name=./fonts/[name].[ext]']
       }
     ]
-  }
+  },
+  plugins: [
+    // make sure to include the plugin for the magic
+    new VueLoaderPlugin()
+  ]
 });
