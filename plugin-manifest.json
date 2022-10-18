@@ -1,0 +1,39 @@
+{
+	"locale": [
+		"en"
+	],
+	"service": "DESK",
+	"storage": true,
+	"type": "org",
+	"whiteListedDomains": [
+		"https://inventory.zoho.com",
+		"https://desk.zoho.com"
+	],
+	"modules": {
+		"widgets": [
+			{
+				"location": "desk.ticket.detail.lefttab",
+				"url": "/app/widget.html",
+				"name": "Inventory Parts",
+				"logo": "/app/img/logo.png",
+				"icon": "/app/img/icon.png"
+			}
+		]
+	},
+	"cspDomains": {
+		"connect-src": []
+	},
+	"zohoAuthorisation": {
+		"connectionLinkName":"zauth",
+		"type" : "connectors",
+		"connectionName":"zauth",
+		"serviceName":"zlabs_integration",
+		"userAccess":false,
+		"isUserDefinedService":false,
+		"sharedBy":"721094803",
+		"scope":["Desk.tickets.ALL","Desk.contacts.READ","Desk.contacts.WRITE","Desk.contacts.UPDATE","Desk.contacts.CREATE","Desk.extensions.ALL","Desk.settings.ALL","ZohoInventory.items.CREATE","ZohoInventory.items.DELETE","ZohoInventory.items.READ","ZohoInventory.items.UPDATE", "ZohoInventory.warehouses.READ"]
+	},
+	"connectors": [],
+	"config": [],
+	"moduleSupport": true
+}
