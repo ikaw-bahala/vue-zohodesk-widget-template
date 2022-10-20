@@ -34,11 +34,13 @@ function runPrePack() {
 if (moduleSupport) {
   runPrePack()
     .then(() => {
+      // eslint-disable-next-line no-undef
       process.exit();
     })
     .catch(err => {
       throw err;
     });
 } else {
+  // eslint-disable-next-line no-undef
   process.exit();
 }

@@ -22,7 +22,36 @@ import TheWelcome from "./components/TheWelcome.vue";
     <TheWelcome />
   </main>
 </template>
+<script>
+let ZOHODESK;
 
+export default {
+  data() {
+    return {
+      count: 0,
+      email: "",
+    };
+  },
+  mounted() {
+    console.log(ZOHODESK);
+    console.log(`The initial count is ${this.count}.`);
+    console.log(this.getTicketEmail());
+  },
+  methods: {
+    getTicketEmail: () => {
+      ZOHODESK.get("ticket")
+        .then(function (res) {
+          //response Handling
+          console.log(res);
+        })
+        .catch(function (err) {
+          //error Handling
+          console.log(err);
+        });
+    },
+  },
+};
+</script>
 <style scoped>
 header {
   line-height: 1.5;

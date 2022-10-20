@@ -28,6 +28,7 @@ export default defineConfig({
     renameIndexPlugin('widget.html'),
   ],
   base: '/app/',
+  publicPath: '',
   build: {
     outDir: "app",
   },
