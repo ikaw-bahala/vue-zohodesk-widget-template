@@ -23,7 +23,6 @@ import TheWelcome from "./components/TheWelcome.vue";
   </main>
 </template>
 <script>
-let ZOHODESK;
 
 export default {
   data() {
@@ -33,13 +32,12 @@ export default {
     };
   },
   mounted() {
-    console.log(ZOHODESK);
     console.log(`The initial count is ${this.count}.`);
-    console.log(this.getTicketEmail());
+    console.log(setTimeout(this.getTicketEmail(), 15000));
   },
   methods: {
     getTicketEmail: () => {
-      ZOHODESK.get("ticket")
+      this.$parent.ZOHODESK.get("ticket")
         .then(function (res) {
           //response Handling
           console.log(res);

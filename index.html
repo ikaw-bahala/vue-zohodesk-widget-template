@@ -9,6 +9,11 @@
   <body>
     <script src="https://js.zohostatic.com/support/developer_sdk/v1/js/ZohoDeskClientSDK.min.js"></script>
     <script type="module" src="/src/index.js"></script>
+    <script>
+        window.onload = function () {
+            ZOHODESK.extension.onload();
+        };
+    </script>
     <div id="app"></div>
   </body>
 </html>
