@@ -10,7 +10,7 @@ let outputFileName = 'extension.js';
 
 // eslint-disable-next-line no-undef
 module.exports = (mode = 'production') => ({
-  entry: path.join(projectRootDir, sourceFolder, 'index.js'),
+  entry: path.join(projectRootDir, sourceFolder, 'main.js'),
   output: {
     filename: 'js/' + outputFileName,
     chunkFilename: 'js/[name].js',
@@ -33,6 +33,11 @@ module.exports = (mode = 'production') => ({
           cacheDirectory: true
         },
         include: path.join(projectRootDir, sourceFolder)
+      },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto",
       },
       {
         test: /\.vue$/,
