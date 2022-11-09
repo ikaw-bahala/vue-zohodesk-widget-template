@@ -6,11 +6,11 @@ import HelloWorld from "./components/HelloWorld.vue";
 <template>
   <header>
     <img
-        alt="Vue logo"
-        class="logo"
-        src="./assets/logo.svg"
-        width="125"
-        height="125"
+      alt="Vue logo"
+      class="logo"
+      src="./assets/logo.svg"
+      width="125"
+      height="125"
     />
 
     <div class="wrapper">
@@ -29,26 +29,22 @@ import HelloWorld from "./components/HelloWorld.vue";
 export default {
   data() {
     return {
-      count: 1
-    }
+      count: 1,
+    };
   },
 
   // `mounted` is a lifecycle hook which we will explain later
   mounted() {
     // `this` refers to the component instance.
-    console.log("COUNT TEST: ") // =>
-    console.log("COUNT TEST: " + this.count) // => 1
-    /*ZOHODESK.get('ticket.email').then(function (res) {
-      console.log(res)
-    }).catch(function (err) {
-      //error Handling
-    });*/
-
+    console.log("COUNT TEST: "); // =>
+    console.log("COUNT TEST: " + this.count); // => 1
+      ZOHODESK.get("ticket.email").then((response) => {
+        console.log(response);
+      });
     // data can be mutated as well
-    this.count = 2
-  }
-}
-
+    this.count = 2;
+  },
+};
 </script>
 
 <style scoped>

@@ -8,8 +8,3 @@ const app = createApp(App);
 app.use(router);
 app.mount("#app");
 
-window.onload = function ()
-{
-    window.ZOHODESK = ZOHODESK;
-    ZOHODESK.extension.onload();
-}
