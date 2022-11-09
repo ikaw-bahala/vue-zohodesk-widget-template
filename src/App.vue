@@ -38,9 +38,12 @@ export default {
     // `this` refers to the component instance.
     console.log("COUNT TEST: "); // =>
     console.log("COUNT TEST: " + this.count); // => 1
+    ZOHODESK.extension.onload().then((App) => {
       ZOHODESK.get("ticket.email").then((response) => {
         console.log(response);
       });
+    });
+
     // data can be mutated as well
     this.count = 2;
   },
