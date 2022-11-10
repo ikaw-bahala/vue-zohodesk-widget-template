@@ -2,9 +2,7 @@
   "name": "vue-zohodesk-widget-template",
   "version": "0.0.0",
   "scripts": {
-    "start": "vite build && node server/index.js",
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite build && node server/index.js",
     "pack": "node prepack.js && node packer.js",
     "preview": "vite preview --port 4173",
     "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}",

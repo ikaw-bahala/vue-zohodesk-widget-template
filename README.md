@@ -22,14 +22,29 @@ npm install
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Compile and Minify for Production and ready for Zoho Sigma upload
 
 ```sh
-npm run build
+npm run pakc
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
+```
+
+### Note
+ - Always wrap you logic with `ZOHODESK.extension.onload()` to be able to use the Zoho Desk SDK.
+```js
+export default {
+    // `mounted` is a lifecycle hook which we will explain later
+    mounted() {
+        ZOHODESK.extension.onload().then((App) => {
+            ZOHODESK.get("ticket.email").then((response) => {
+                console.log(response);
+            });
+        });
+    },
+};
 ```
